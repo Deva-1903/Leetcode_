@@ -12,8 +12,7 @@ class Solution {
                 case "name":
                     count += item.get(2).equals(ruleValue)?1:0;
                     break;
-            }
-            
+            }  
         }
         return count;
     }
