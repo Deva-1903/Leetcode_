@@ -7,7 +7,9 @@ class Solution {
                 m1++;
             }   
             else{
-                if(m2<m1) m2 = m1;
+                if(m2<m1){
+                    m2 = m1;
+                } 
                 m1 = 0;
             }
         }
