@@ -4,11 +4,9 @@ class Solution {
         int m2 = 0; 
         for(int i=0; i<nums.length; i++){    
             if(nums[i]==1){
-                m1+=1;    
+                m1++;    
             }else{
-                if(m2<m1){
-                    m2 = m1;
-                }
+                if(m2<m1) m2 = m1;
                 m1 = 0;
             }
         }
