@@ -1,8 +1,8 @@
 class Solution {
     public void rotate(int[] nums, int k) {
-        // step1: reverse the array
-        // step2: split the array into two.
-        // step3: reverse both the two parts.
+        // for eg: arr = [1,2,3,4,5] k=2, Now reverse the array. It becomes [5,4,3,2,1]
+        // Now split into two parts based on k value. like [5,4,] and [3,2,1]
+        // Now reverse the both parts.
         
         //taking k modulo for edge cases
         k = k%nums.length;
