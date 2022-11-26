@@ -1,33 +1,35 @@
 class Solution {
     public void setZeroes(int[][] matrix) {
-        int count = 0; 
-        // iterate every index,if you find 0 change the row and column value except 0 to -1
-        // after iterating check for the -1 value and change it to 0;
+        boolean fCol = false;
+        boolean fRow = false;
+        
         for(int i=0; i<matrix.length; i++){
             for(int j=0; j<matrix[0].length; j++){
                 if(matrix[i][j]==0){
-                    count++;
-                    for(int row=0; row<matrix[i].length;row++){
-                        if(matrix[i][row] != 0 && matrix[i][row]!=-1){
-                              matrix[i][row] = -1;
-                        }
-                    }
-                    for(int col=0; col<matrix.length; col++){
-                        if(matrix[col][j]!=0 && matrix[col][j]!=-1){
-                              matrix[col][j] = -1;
-                        }
-                    }
+                    if(i==0) fRow = true;
+                    if(j==0) fCol = true;
+                    matrix[0][j] = 0;
+                    matrix[i][0] = 0;
                 }
             }
         }
-        if(count!=0){
-            for(int i=0; i<matrix.length; i++){
-                for(int j=0; j<matrix[i].length; j++){
-                    if(matrix[i][j]==-1){
-                        matrix[i][j] = 0;
-                    }
+        
+        for(int i=1; i<matrix.length; i++){
+            for(int j=1; j<matrix[0].length; j++){
+                if(matrix[0][j]==0 || matrix[i][0]==0){
+                    matrix[i][j] = 0;
                 }
             }
-        }  
+        }
+        if(fRow) {
+            for(int j = 0; j < matrix[0].length; j++) {
+                matrix[0][j] = 0;
+            }
+       }
+         if(fCol){
+            for(int i=0;i<matrix.length;i++){
+                matrix[i][0] = 0;
+            }
+        }
     }
 }
