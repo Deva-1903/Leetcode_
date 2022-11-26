@@ -1,6 +1,8 @@
 class Solution {
     public void setZeroes(int[][] matrix) {
-        int count = 0;
+        int count = 0; 
+        // iterate every index,if you find 0 change the row and column value except 0 to -1
+        // after iterating check for the -1 value and change it to 0;
         for(int i=0; i<matrix.length; i++){
             for(int j=0; j<matrix[0].length; j++){
                 if(matrix[i][j]==0){
@@ -23,11 +25,9 @@ class Solution {
                 for(int j=0; j<matrix[i].length; j++){
                     if(matrix[i][j]==-1){
                         matrix[i][j] = 0;
+                    }
                 }
             }
-        }
-        }
-       
-        
+        }  
     }
 }
