@@ -8,11 +8,7 @@ class Solution {
             }
         }
         for(int i=0; i<candies.length; i++){
-            if(candies[i]+extraCandies >= maxNum){
-                bool.add(true);
-            }else{
-                bool.add(false);
-            }
+            bool.add(candies[i]+extraCandies >= maxNum);
         }
         return bool;
     }
