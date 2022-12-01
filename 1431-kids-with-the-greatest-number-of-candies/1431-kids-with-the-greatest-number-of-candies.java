@@ -2,18 +2,15 @@ class Solution {
     public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
         List<Boolean> bool = new ArrayList<Boolean>();
         
-        int[] arr = new int[candies.length];
-        int smallNum = -1;
-        
-        
+        int maxNum = -1;
+
         for(int i=0; i<candies.length; i++){
-            if(candies[i]>smallNum){
-                smallNum = candies[i];
-             
+            if(candies[i]>maxNum){
+                maxNum = candies[i];
             }
         }
         for(int i=0; i<candies.length; i++){
-            if(((candies[i]+extraCandies) >= smallNum)){
+            if(candies[i]+extraCandies >= maxNum){
                 bool.add(true);
             }else{
                 bool.add(false);
